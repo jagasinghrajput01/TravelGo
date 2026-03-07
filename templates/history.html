@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Booking History</h2>
+
+<a href="/booking" class="btn">← Back to Booking</a>
+
+<table class="history-table">
+
+<tr>
+<th>Transport</th>
+<th>From</th>
+<th>To</th>
+<th>Date</th>
+<th>Seat</th>
+<th>Price</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for booking in bookings %}
+
+<tr>
+<td>{{ booking.transport }}</td>
+<td>{{ booking.source }}</td>
+<td>{{ booking.destination }}</td>
+<td>{{ booking.date }}</td>
+<td>{{ booking.seat }}</td>
+<td>₹{{ booking.price }}</td>
+<td>{{ booking.status }}</td>
+
+<td>
+{% if booking.status != "CANCELLED" %}
+<a href="/cancel/{{ booking.booking_id }}" class="cancel-btn">Cancel</a>
+{% else %}
+Cancelled
+{% endif %}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

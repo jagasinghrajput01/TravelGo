@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Book Travel</h2>
+
+<form method="POST">
+
+<label>Transport</label>
+<select name="transport">
+<option>Bus</option>
+<option>Train</option>
+<option>Flight</option>
+<option>Hotel</option>
+</select>
+
+<label>From</label>
+<select name="source">
+{% for city in cities %}
+<option value="{{city}}">{{city}}</option>
+{% endfor %}
+</select>
+
+<label>To</label>
+<select name="destination">
+{% for city in cities %}
+<option value="{{city}}">{{city}}</option>
+{% endfor %}
+</select>
+
+<label>Date</label>
+<input type="date" name="date">
+
+<button>Book Now</button>
+
+</form>
+
+{% endblock %}
