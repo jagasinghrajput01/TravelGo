@@ -33,7 +33,7 @@ cities = [
 # AWS Configuration
 # -------------------------
 region = "us-east-1"
-sns_topic_arn = "arn:aws:sns:ap-south-1:716738292013:travelgo_notifications"
+sns_topic_arn = "arn:aws:sns:us-east-1:716738292013:travelgo_notifications"
 
 print("AWS REGION:", region)
 print("SNS ARN:", sns_topic_arn)
